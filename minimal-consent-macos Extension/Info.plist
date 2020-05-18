@@ -5,7 +5,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
-	<string>minimal-consent-macos Extension</string>
+	<string>Minimal Consent for Safari</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -34,13 +34,13 @@
 		<array>
 			<dict>
 				<key>Script</key>
-				<string>script.js</string>
+				<string>contentscript.js</string>
 			</dict>
 		</array>
 		<key>SFSafariToolbarItem</key>
 		<dict>
 			<key>Action</key>
-			<string>Popover</string>
+			<string>Command</string>
 			<key>Identifier</key>
 			<string>Button</string>
 			<key>Image</key>
@@ -57,6 +57,6 @@
 	<key>NSHumanReadableCopyright</key>
 	<string>Copyright © 2020 Gerald Madlmayr. All rights reserved.</string>
 	<key>NSHumanReadableDescription</key>
-	<string>This is a Safari Extension. You should tell us what your extension does here.</string>
+	<string>Minimal Consent for Safari. More on https://www.minimal-consent.com/</string>
 </dict>
 </plist>
