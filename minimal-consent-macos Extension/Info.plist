@@ -44,7 +44,7 @@
 			<key>Identifier</key>
 			<string>Button</string>
 			<key>Image</key>
-			<string>ToolbarItemIcon.pdf</string>
+			<string>icon.png</string>
 			<key>Label</key>
 			<string>Minimal Consent</string>
 		</dict>

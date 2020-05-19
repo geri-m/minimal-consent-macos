@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		06B3DACA2473C206005EE8C5 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 06B3DAC92473C206005EE8C5 /* icon.png */; };
 		06BBE7BA2473103D0093C24B /* contentscript.js in Resources */ = {isa = PBXBuildFile; fileRef = 06BBE7B92473103D0093C24B /* contentscript.js */; };
 		06D6BD712472F64D007FBEFD /* minimal_consent_macos.entitlements in Resources */ = {isa = PBXBuildFile; fileRef = 06D6BD702472F64D007FBEFD /* minimal_consent_macos.entitlements */; };
 		06D6BD732472F64D007FBEFD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D6BD722472F64D007FBEFD /* AppDelegate.swift */; };
@@ -19,7 +20,6 @@
 		06D6BD8B2472F64E007FBEFD /* SafariExtensionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D6BD8A2472F64E007FBEFD /* SafariExtensionViewController.swift */; };
 		06D6BD8E2472F64E007FBEFD /* SafariExtensionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06D6BD8C2472F64E007FBEFD /* SafariExtensionViewController.xib */; };
 		06D6BD912472F64E007FBEFD /* script.js in Resources */ = {isa = PBXBuildFile; fileRef = 06D6BD902472F64E007FBEFD /* script.js */; };
-		06D6BD932472F64E007FBEFD /* ToolbarItemIcon.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 06D6BD922472F64E007FBEFD /* ToolbarItemIcon.pdf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +47,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		06B3DAC92473C206005EE8C5 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		06BBE7B92473103D0093C24B /* contentscript.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = contentscript.js; sourceTree = "<group>"; };
 		06D6BD6D2472F64D007FBEFD /* minimal-consent-macos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "minimal-consent-macos.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		06D6BD702472F64D007FBEFD /* minimal_consent_macos.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = minimal_consent_macos.entitlements; sourceTree = "<group>"; };
@@ -62,7 +63,6 @@
 		06D6BD8D2472F64E007FBEFD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SafariExtensionViewController.xib; sourceTree = "<group>"; };
 		06D6BD8F2472F64E007FBEFD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		06D6BD902472F64E007FBEFD /* script.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = script.js; sourceTree = "<group>"; };
-		06D6BD922472F64E007FBEFD /* ToolbarItemIcon.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = ToolbarItemIcon.pdf; sourceTree = "<group>"; };
 		06D6BD942472F64E007FBEFD /* minimal_consent_macos_Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = minimal_consent_macos_Extension.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -128,13 +128,13 @@
 		06D6BD872472F64E007FBEFD /* minimal-consent-macos Extension */ = {
 			isa = PBXGroup;
 			children = (
+				06B3DAC92473C206005EE8C5 /* icon.png */,
 				06BBE7B92473103D0093C24B /* contentscript.js */,
 				06D6BD882472F64E007FBEFD /* SafariExtensionHandler.swift */,
 				06D6BD8A2472F64E007FBEFD /* SafariExtensionViewController.swift */,
 				06D6BD8C2472F64E007FBEFD /* SafariExtensionViewController.xib */,
 				06D6BD8F2472F64E007FBEFD /* Info.plist */,
 				06D6BD902472F64E007FBEFD /* script.js */,
-				06D6BD922472F64E007FBEFD /* ToolbarItemIcon.pdf */,
 				06D6BD942472F64E007FBEFD /* minimal_consent_macos_Extension.entitlements */,
 			);
 			path = "minimal-consent-macos Extension";
@@ -231,7 +231,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				06D6BD932472F64E007FBEFD /* ToolbarItemIcon.pdf in Resources */,
+				06B3DACA2473C206005EE8C5 /* icon.png in Resources */,
 				06D6BD8E2472F64E007FBEFD /* SafariExtensionViewController.xib in Resources */,
 				06D6BD912472F64E007FBEFD /* script.js in Resources */,
 				06BBE7BA2473103D0093C24B /* contentscript.js in Resources */,
