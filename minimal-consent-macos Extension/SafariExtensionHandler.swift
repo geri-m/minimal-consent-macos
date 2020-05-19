@@ -60,7 +60,7 @@ class SafariExtensionHandler: SFSafariExtensionHandler {
         do {
             request.httpBody = try JSONSerialization.data(withJSONObject: newDict , options: .prettyPrinted) // pass dictionary to nsdata object and set it as request body
         } catch let error {
-            NSLog(error.localizedDescription)
+            NSLog("Error:" + error.localizedDescription)
         }
         
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
@@ -84,7 +84,7 @@ class SafariExtensionHandler: SFSafariExtensionHandler {
                     // handle json...
                 }
             } catch let error {
-                NSLog(error.localizedDescription)
+                NSLog("Data:" + error.localizedDescription)
             }
         })
         task.resume()
