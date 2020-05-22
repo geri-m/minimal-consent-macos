@@ -19,7 +19,6 @@
 		06D6BD892472F64E007FBEFD /* SafariExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D6BD882472F64E007FBEFD /* SafariExtensionHandler.swift */; };
 		06D6BD8B2472F64E007FBEFD /* SafariExtensionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D6BD8A2472F64E007FBEFD /* SafariExtensionViewController.swift */; };
 		06D6BD8E2472F64E007FBEFD /* SafariExtensionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06D6BD8C2472F64E007FBEFD /* SafariExtensionViewController.xib */; };
-		06D6BD912472F64E007FBEFD /* script.js in Resources */ = {isa = PBXBuildFile; fileRef = 06D6BD902472F64E007FBEFD /* script.js */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,7 +61,6 @@
 		06D6BD8A2472F64E007FBEFD /* SafariExtensionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariExtensionViewController.swift; sourceTree = "<group>"; };
 		06D6BD8D2472F64E007FBEFD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SafariExtensionViewController.xib; sourceTree = "<group>"; };
 		06D6BD8F2472F64E007FBEFD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		06D6BD902472F64E007FBEFD /* script.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = script.js; sourceTree = "<group>"; };
 		06D6BD942472F64E007FBEFD /* minimal_consent_macos_Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = minimal_consent_macos_Extension.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -134,7 +132,6 @@
 				06D6BD8A2472F64E007FBEFD /* SafariExtensionViewController.swift */,
 				06D6BD8C2472F64E007FBEFD /* SafariExtensionViewController.xib */,
 				06D6BD8F2472F64E007FBEFD /* Info.plist */,
-				06D6BD902472F64E007FBEFD /* script.js */,
 				06D6BD942472F64E007FBEFD /* minimal_consent_macos_Extension.entitlements */,
 			);
 			path = "minimal-consent-macos Extension";
@@ -233,7 +230,6 @@
 			files = (
 				06B3DACA2473C206005EE8C5 /* icon.png in Resources */,
 				06D6BD8E2472F64E007FBEFD /* SafariExtensionViewController.xib in Resources */,
-				06D6BD912472F64E007FBEFD /* script.js in Resources */,
 				06BBE7BA2473103D0093C24B /* contentscript.js in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -409,7 +405,7 @@
 				CODE_SIGN_ENTITLEMENTS = "minimal-consent-macos Extension/minimal_consent_macos_Extension.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = S6PVRS8F57;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = "minimal-consent-macos Extension/Info.plist";
@@ -432,7 +428,7 @@
 				CODE_SIGN_ENTITLEMENTS = "minimal-consent-macos Extension/minimal_consent_macos_Extension.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = S6PVRS8F57;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = "minimal-consent-macos Extension/Info.plist";
@@ -457,7 +453,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = S6PVRS8F57;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = "minimal-consent-macos/Info.plist";
@@ -465,6 +461,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "at.madlmayr.minimal-consent-Extension";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -480,7 +477,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = S6PVRS8F57;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = "minimal-consent-macos/Info.plist";
@@ -488,6 +485,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "at.madlmayr.minimal-consent-Extension";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
