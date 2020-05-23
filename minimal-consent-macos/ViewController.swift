@@ -11,18 +11,18 @@ import SafariServices.SFSafariApplication
 
 class ViewController: NSViewController {
 
-    @IBOutlet var appNameLabel: NSTextField!
+    //@IBOutlet var appNameLabel: NSTextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.appNameLabel.stringValue = "Minimal Consent";
+        //self.appNameLabel.stringValue = "Minimal Consent";
     }
     
     @IBAction func openSafariExtensionPreferences(_ sender: AnyObject?) {
         SFSafariApplication.showPreferencesForExtension(withIdentifier: "at.madlmayr.minimal-consent-Extension") { error in
-            if let _ = error {
+            if let xxx = error {
                 // Insert code to inform the user that something went wrong.
-
+                print(xxx)
             }
         }
     }
