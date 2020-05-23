@@ -10,6 +10,14 @@ import SafariServices
 
 class SafariExtensionHandler: SFSafariExtensionHandler {
     
+        /*
+    override init() {
+        let path1 :String = Bundle.main.path(forResource: "icon", ofType: "png")!
+        self.standardImage = NSImage(byReferencingFile :path1)!
+        NSLog(self.standardImage.description)
+    }
+ */
+    
     // creating a mutable Dictionary to send over to the backend.
     func unimmutable(dict:[String:Any])->[String:Any] {
         var mutableDict = dict
@@ -69,6 +77,29 @@ class SafariExtensionHandler: SFSafariExtensionHandler {
         
         NSLog("Done sending")
         
+        SFSafariApplication.getActiveWindow { (window) in
+            let path2 :String = Bundle.main.path(forResource: "icon-ok", ofType: "png")!
+            let okayImage = NSImage(byReferencingFile :path2)!
+            NSLog(okayImage.description)
+            
+            
+            var toolbaritemretrieved = false
+            var toolbaritem : SFSafariToolbarItem?
+            window?.getToolbarItem { (item) in
+                // Typecast.
+                toolbaritem = item as SFSafariToolbarItem?;
+                toolbaritemretrieved = true;
+            }
+            
+            while(!toolbaritemretrieved){
+                //wait for toolbar item to be retrieved
+            }
+            toolbaritem!.setImage(okayImage);
+            
+            NSLog("Toolbar: " + toolbaritem!.description);
+            
+            SFSafariApplication.setToolbarItemsNeedUpdate();
+        }
         
         
     }
@@ -86,24 +117,11 @@ class SafariExtensionHandler: SFSafariExtensionHandler {
             toolbaritemretrieved = true;
         }
         
-        if let path :String = Bundle.main.path(forResource: "icon-ok", ofType: "png"){
-            let icon : NSImage
-            NSLog("Path: " + path)
-            icon = NSImage(byReferencingFile :path)!;
-            NSLog(icon.description)
-            
-            
-            while(!toolbaritemretrieved){
-                //wait for toolbar item to be retrieved
-            }
-            toolbaritem?.setImage(icon);
-            SFSafariApplication.setToolbarItemsNeedUpdate();
-            
-            NSLog("All okay: " + icon.description)
-        } else {
-            NSLog("File not found");
+        while(!toolbaritemretrieved){
+            //wait for toolbar item to be retrieved
         }
-        
+       // toolbaritem?.setImage(okayImage);
+        SFSafariApplication.setToolbarItemsNeedUpdate();
     }
     
     
