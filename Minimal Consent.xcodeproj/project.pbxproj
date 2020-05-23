@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		064962DB2479814E006FEC68 /* icon-ok.png in Resources */ = {isa = PBXBuildFile; fileRef = 064962DA2479814D006FEC68 /* icon-ok.png */; };
+		064962DC24798191006FEC68 /* icon-ok.png in Resources */ = {isa = PBXBuildFile; fileRef = 064962DA2479814D006FEC68 /* icon-ok.png */; };
 		06B3DACA2473C206005EE8C5 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 06B3DAC92473C206005EE8C5 /* icon.png */; };
 		06BBE7BA2473103D0093C24B /* contentscript.js in Resources */ = {isa = PBXBuildFile; fileRef = 06BBE7B92473103D0093C24B /* contentscript.js */; };
 		06D6BD712472F64D007FBEFD /* minimal_consent_macos.entitlements in Resources */ = {isa = PBXBuildFile; fileRef = 06D6BD702472F64D007FBEFD /* minimal_consent_macos.entitlements */; };
@@ -46,6 +48,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		064962DA2479814D006FEC68 /* icon-ok.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-ok.png"; sourceTree = "<group>"; };
 		06B3DAC92473C206005EE8C5 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		06BBE7B92473103D0093C24B /* contentscript.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = contentscript.js; sourceTree = "<group>"; };
 		06D6BD6D2472F64D007FBEFD /* Minimal Consent.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Minimal Consent.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -126,6 +129,7 @@
 		06D6BD872472F64E007FBEFD /* minimal-consent-macos Extension */ = {
 			isa = PBXGroup;
 			children = (
+				064962DA2479814D006FEC68 /* icon-ok.png */,
 				06B3DAC92473C206005EE8C5 /* icon.png */,
 				06BBE7B92473103D0093C24B /* contentscript.js */,
 				06D6BD882472F64E007FBEFD /* SafariExtensionHandler.swift */,
@@ -220,6 +224,7 @@
 			files = (
 				06D6BD712472F64D007FBEFD /* minimal_consent_macos.entitlements in Resources */,
 				06D6BD7A2472F64E007FBEFD /* Assets.xcassets in Resources */,
+				064962DB2479814E006FEC68 /* icon-ok.png in Resources */,
 				06D6BD762472F64D007FBEFD /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -228,6 +233,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				064962DC24798191006FEC68 /* icon-ok.png in Resources */,
 				06B3DACA2473C206005EE8C5 /* icon.png in Resources */,
 				06D6BD8E2472F64E007FBEFD /* SafariExtensionViewController.xib in Resources */,
 				06BBE7BA2473103D0093C24B /* contentscript.js in Resources */,

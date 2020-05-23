@@ -10,103 +10,112 @@ import SafariServices
 
 class SafariExtensionHandler: SFSafariExtensionHandler {
     
-    
+    // creating a mutable Dictionary to send over to the backend.
     func unimmutable(dict:[String:Any])->[String:Any] {
-        var mutatedDict = dict
-        for (key, value) in mutatedDict {
-            mutatedDict[key] = value
+        var mutableDict = dict
+        for (key, value) in mutableDict {
+            mutableDict[key] = value
         }
-        return mutatedDict
+        return mutableDict
     }
     
+    // This is the callback funcation when the JavaScripts is dispatching Information.
     override func messageReceived(withName messageName: String, from page: SFSafariPage, userInfo: [String : Any]?) {
-        // This method will be called when a content script provided by your extension calls safari.extension.dispatchMessage("message").
-        page.getPropertiesWithCompletionHandler { properties in
-            NSLog("The extension received a message (\(messageName)) from a script injected into (\(String(describing: properties?.url))) with userInfo (\(userInfo ?? [:]))")
-           
-        }
-        
-        // get the page properties and
+        // get the page properties and call the backend call. It's async that why we are calling a separat method.
         page.getPropertiesWithCompletionHandler { properties in self.postStatusToBackend(with: properties, userInfo: userInfo) }
     }
-        
+    
     func postStatusToBackend(with prop: SFSafariPageProperties?, userInfo: [String : Any]? ){
-        
-        var newDict = self.unimmutable(dict:userInfo!)
-        
-        //  let he = new HistoryEntry(now, link.host, request.cmp, request.cmpScripUrl, pr, request.implemented);
+        // here we do a force unwrap of the parameter.
+        // as if there is no parameter, converting should fail
+        var newDict = self.unimmutable(dict:userInfo! as [String : Any])
         
         NSLog("Current URL: " + (prop?.url?.absoluteString)!)
         
         // Unwrapping the userInfo
+        // Optional Chaining, in order not to fail, if one of the parameters is nil.
+        // https://docs.swift.org/swift-book/LanguageGuide/OptionalChaining.html
         newDict["url"] = prop?.url?.absoluteString
-        newDict["version"] = "1.0.7"
+        newDict["version"] = "1.0.8"
         newDict["uuid"]  = "some-uuid-from-OSX"
         
         NSLog("User Info: (\(userInfo ?? [:]))")
         
-        //create the url with URL
-        // private static readonly URL_CONSENT = "https://europe-west1-minimal-consent-chrome-ext.cloudfunctions.net/successfulConsent";
-        let url = URL(string: "https://europe-west1-minimal-consent-chrome-ext.cloudfunctions.net/successfulConsent")! //change the url
+        // create the url for calling the backend
+        let url = URL(string: "https://europe-west1-minimal-consent-chrome-ext.cloudfunctions.net/successfulConsent")!
         
-        //create the session object
+        // create the session object
         let session = URLSession.shared
         
-        //now create the URLRequest object using the url object
+        // now create the URLRequest object using the url object
         var request = URLRequest(url: url)
-        request.httpMethod = "POST" //set http method as POST
         
+        //set http method as POST
+        request.httpMethod = "POST"
+        
+        // create JSON from the Dict and set the Body
         do {
-            request.httpBody = try JSONSerialization.data(withJSONObject: newDict , options: .prettyPrinted) // pass dictionary to nsdata object and set it as request body
+            request.httpBody = try JSONSerialization.data(withJSONObject: newDict, options: .prettyPrinted) // pass dictionary to nsdata object and set it as request body
         } catch let error {
             NSLog("Error:" + error.localizedDescription)
         }
         
+        // Content Type of the data we pass along.
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.addValue("application/json", forHTTPHeaderField: "Accept")
         
         //create dataTask using the session object to send data to the server
-        let task = session.dataTask(with: request as URLRequest/*, completionHandler: { data, response, error in
-            
-            guard error == nil else {
-                return
-            }
-            
-            guard let data = data else {
-                return
-            }
-            
-            do {
-                //create json object from data
-                if let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String: Any] {
-                    NSLog(try JSONSerialization.data(withJSONObject: json).description)
-                    // handle json...
-                }
-            } catch let error {
-                NSLog("Data:" + error.localizedDescription)
-            }
-        }*/)
+        let task = session.dataTask(with: request as URLRequest)
         task.resume()
         
         NSLog("Done sending")
+        
+        
+        
     }
     
-    /*
+    
     override func toolbarItemClicked(in window: SFSafariWindow) {
         // This method will be called when your toolbar item is clicked.
         NSLog("The extension's toolbar item was clicked")
+        
+        //  https://stackoverflow.com/questions/52319160/how-can-i-change-a-toolbar-icon-in-a-safari-app-extension-at-runtime
+        var toolbaritemretrieved = false
+        var toolbaritem : SFSafariToolbarItem?
+        window.getToolbarItem { (item) in
+            toolbaritem = item as SFSafariToolbarItem?;
+            toolbaritemretrieved = true;
+        }
+        
+        if let path :String = Bundle.main.path(forResource: "icon-ok", ofType: "png"){
+            let icon : NSImage
+            NSLog("Path: " + path)
+            icon = NSImage(byReferencingFile :path)!;
+            NSLog(icon.description)
+            
+            
+            while(!toolbaritemretrieved){
+                //wait for toolbar item to be retrieved
+            }
+            toolbaritem?.setImage(icon);
+            SFSafariApplication.setToolbarItemsNeedUpdate();
+            
+            NSLog("All okay: " + icon.description)
+        } else {
+            NSLog("File not found");
+        }
+        
     }
-    */
- 
+    
+    
     override func validateToolbarItem(in window: SFSafariWindow, validationHandler: @escaping ((Bool, String) -> Void)) {
         // This is called when Safari's state changed in some way that would require the extension's toolbar item to be validated again.
         validationHandler(true, "")
     }
     
     /*
-    override func popoverViewController() -> SFSafariExtensionViewController {
-        return SafariExtensionViewController.shared
-    }
+     override func popoverViewController() -> SFSafariExtensionViewController {
+     return SafariExtensionViewController.shared
+     }
      */
     
 }
