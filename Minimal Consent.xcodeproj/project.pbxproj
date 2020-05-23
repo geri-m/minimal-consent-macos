@@ -14,7 +14,7 @@
 		06D6BD762472F64D007FBEFD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06D6BD742472F64D007FBEFD /* Main.storyboard */; };
 		06D6BD782472F64D007FBEFD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D6BD772472F64D007FBEFD /* ViewController.swift */; };
 		06D6BD7A2472F64E007FBEFD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06D6BD792472F64E007FBEFD /* Assets.xcassets */; };
-		06D6BD812472F64E007FBEFD /* minimal-consent-macos Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 06D6BD802472F64E007FBEFD /* minimal-consent-macos Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		06D6BD812472F64E007FBEFD /* Minimal Consent Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 06D6BD802472F64E007FBEFD /* Minimal Consent Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		06D6BD862472F64E007FBEFD /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06D6BD852472F64E007FBEFD /* Cocoa.framework */; };
 		06D6BD892472F64E007FBEFD /* SafariExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D6BD882472F64E007FBEFD /* SafariExtensionHandler.swift */; };
 		06D6BD8B2472F64E007FBEFD /* SafariExtensionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D6BD8A2472F64E007FBEFD /* SafariExtensionViewController.swift */; };
@@ -38,7 +38,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				06D6BD812472F64E007FBEFD /* minimal-consent-macos Extension.appex in Embed App Extensions */,
+				06D6BD812472F64E007FBEFD /* Minimal Consent Extension.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -48,14 +48,14 @@
 /* Begin PBXFileReference section */
 		06B3DAC92473C206005EE8C5 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		06BBE7B92473103D0093C24B /* contentscript.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = contentscript.js; sourceTree = "<group>"; };
-		06D6BD6D2472F64D007FBEFD /* minimal-consent-macos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "minimal-consent-macos.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		06D6BD6D2472F64D007FBEFD /* Minimal Consent.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Minimal Consent.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		06D6BD702472F64D007FBEFD /* minimal_consent_macos.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = minimal_consent_macos.entitlements; sourceTree = "<group>"; };
 		06D6BD722472F64D007FBEFD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		06D6BD752472F64D007FBEFD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		06D6BD772472F64D007FBEFD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		06D6BD792472F64E007FBEFD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		06D6BD7B2472F64E007FBEFD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		06D6BD802472F64E007FBEFD /* minimal-consent-macos Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "minimal-consent-macos Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		06D6BD802472F64E007FBEFD /* Minimal Consent Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Minimal Consent Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		06D6BD852472F64E007FBEFD /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		06D6BD882472F64E007FBEFD /* SafariExtensionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariExtensionHandler.swift; sourceTree = "<group>"; };
 		06D6BD8A2472F64E007FBEFD /* SafariExtensionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariExtensionViewController.swift; sourceTree = "<group>"; };
@@ -96,8 +96,8 @@
 		06D6BD6E2472F64D007FBEFD /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				06D6BD6D2472F64D007FBEFD /* minimal-consent-macos.app */,
-				06D6BD802472F64E007FBEFD /* minimal-consent-macos Extension.appex */,
+				06D6BD6D2472F64D007FBEFD /* Minimal Consent.app */,
+				06D6BD802472F64E007FBEFD /* Minimal Consent Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -140,9 +140,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		06D6BD6C2472F64D007FBEFD /* minimal-consent-macos */ = {
+		06D6BD6C2472F64D007FBEFD /* Minimal Consent */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 06D6BD9B2472F64E007FBEFD /* Build configuration list for PBXNativeTarget "minimal-consent-macos" */;
+			buildConfigurationList = 06D6BD9B2472F64E007FBEFD /* Build configuration list for PBXNativeTarget "Minimal Consent" */;
 			buildPhases = (
 				06D6BD692472F64D007FBEFD /* Sources */,
 				06D6BD6A2472F64D007FBEFD /* Frameworks */,
@@ -154,14 +154,14 @@
 			dependencies = (
 				06D6BD832472F64E007FBEFD /* PBXTargetDependency */,
 			);
-			name = "minimal-consent-macos";
+			name = "Minimal Consent";
 			productName = "minimal-consent-macos";
-			productReference = 06D6BD6D2472F64D007FBEFD /* minimal-consent-macos.app */;
+			productReference = 06D6BD6D2472F64D007FBEFD /* Minimal Consent.app */;
 			productType = "com.apple.product-type.application";
 		};
-		06D6BD7F2472F64E007FBEFD /* minimal-consent-macos Extension */ = {
+		06D6BD7F2472F64E007FBEFD /* Minimal Consent Extension */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 06D6BD972472F64E007FBEFD /* Build configuration list for PBXNativeTarget "minimal-consent-macos Extension" */;
+			buildConfigurationList = 06D6BD972472F64E007FBEFD /* Build configuration list for PBXNativeTarget "Minimal Consent Extension" */;
 			buildPhases = (
 				06D6BD7C2472F64E007FBEFD /* Sources */,
 				06D6BD7D2472F64E007FBEFD /* Frameworks */,
@@ -171,9 +171,9 @@
 			);
 			dependencies = (
 			);
-			name = "minimal-consent-macos Extension";
+			name = "Minimal Consent Extension";
 			productName = "minimal-consent-macos Extension";
-			productReference = 06D6BD802472F64E007FBEFD /* minimal-consent-macos Extension.appex */;
+			productReference = 06D6BD802472F64E007FBEFD /* Minimal Consent Extension.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
@@ -194,7 +194,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 06D6BD682472F64D007FBEFD /* Build configuration list for PBXProject "minimal-consent-macos" */;
+			buildConfigurationList = 06D6BD682472F64D007FBEFD /* Build configuration list for PBXProject "Minimal Consent" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -207,8 +207,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				06D6BD6C2472F64D007FBEFD /* minimal-consent-macos */,
-				06D6BD7F2472F64E007FBEFD /* minimal-consent-macos Extension */,
+				06D6BD6C2472F64D007FBEFD /* Minimal Consent */,
+				06D6BD7F2472F64E007FBEFD /* Minimal Consent Extension */,
 			);
 		};
 /* End PBXProject section */
@@ -260,7 +260,7 @@
 /* Begin PBXTargetDependency section */
 		06D6BD832472F64E007FBEFD /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 06D6BD7F2472F64E007FBEFD /* minimal-consent-macos Extension */;
+			target = 06D6BD7F2472F64E007FBEFD /* Minimal Consent Extension */;
 			targetProxy = 06D6BD822472F64E007FBEFD /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -495,7 +495,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		06D6BD682472F64D007FBEFD /* Build configuration list for PBXProject "minimal-consent-macos" */ = {
+		06D6BD682472F64D007FBEFD /* Build configuration list for PBXProject "Minimal Consent" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				06D6BD952472F64E007FBEFD /* Debug */,
@@ -504,7 +504,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		06D6BD972472F64E007FBEFD /* Build configuration list for PBXNativeTarget "minimal-consent-macos Extension" */ = {
+		06D6BD972472F64E007FBEFD /* Build configuration list for PBXNativeTarget "Minimal Consent Extension" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				06D6BD982472F64E007FBEFD /* Debug */,
@@ -513,7 +513,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		06D6BD9B2472F64E007FBEFD /* Build configuration list for PBXNativeTarget "minimal-consent-macos" */ = {
+		06D6BD9B2472F64E007FBEFD /* Build configuration list for PBXNativeTarget "Minimal Consent" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				06D6BD9C2472F64E007FBEFD /* Debug */,

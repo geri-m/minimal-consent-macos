@@ -15,11 +15,11 @@ class ViewController: NSViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.appNameLabel.stringValue = "minimal-consent-macos";
+        self.appNameLabel.stringValue = "Minimal Consent";
     }
     
     @IBAction func openSafariExtensionPreferences(_ sender: AnyObject?) {
-        SFSafariApplication.showPreferencesForExtension(withIdentifier: "at.madlmayr.minimal-consent-macos-Extension") { error in
+        SFSafariApplication.showPreferencesForExtension(withIdentifier: "at.madlmayr.minimal-consent-Extension") { error in
             if let _ = error {
                 // Insert code to inform the user that something went wrong.
 
