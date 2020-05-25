@@ -10,7 +10,7 @@ import SafariServices
 
 class SafariExtensionHandler: SFSafariExtensionHandler {
        
-    static var showOkayImage: Bool = false;
+    // static var showOkayImage: Bool = false;
     
     // creating a mutable Dictionary to send over to the backend.
     func unimmutable(dict:[String:Any])->[String:Any] {
@@ -72,8 +72,10 @@ class SafariExtensionHandler: SFSafariExtensionHandler {
         NSLog("Done sending")
         
         // setting the variable to change the icon.
+        /*
         SafariExtensionHandler.showOkayImage = true;
         SFSafariApplication.setToolbarItemsNeedUpdate();
+         */
     }
     
     
@@ -87,6 +89,7 @@ class SafariExtensionHandler: SFSafariExtensionHandler {
         // This is called when Safari's state changed in some way that would require the extension's toolbar item to be validated again.
         validationHandler(true, "")
         
+        /*
         NSLog("validateToolbarItem " + SafariExtensionHandler.showOkayImage.description)
         
         if(SafariExtensionHandler.showOkayImage){
@@ -107,6 +110,7 @@ class SafariExtensionHandler: SFSafariExtensionHandler {
             
             toolbaritem?.setImage(okayImage);
         }
+            */
     }
     
     /*
