@@ -10,13 +10,15 @@ import SafariServices
 
 class SafariExtensionHandler: SFSafariExtensionHandler {
     
-        /*
-    override init() {
-        let path1 :String = Bundle.main.path(forResource: "icon", ofType: "png")!
-        self.standardImage = NSImage(byReferencingFile :path1)!
-        NSLog(self.standardImage.description)
-    }
- */
+    /*
+     override init() {
+     let path1 :String = Bundle.main.path(forResource: "icon", ofType: "png")!
+     self.standardImage = NSImage(byReferencingFile :path1)!
+     NSLog(self.standardImage.description)
+     }
+     */
+    
+    // var  showOkayImage: Bool = false;
     
     // creating a mutable Dictionary to send over to the backend.
     func unimmutable(dict:[String:Any])->[String:Any] {
@@ -76,31 +78,38 @@ class SafariExtensionHandler: SFSafariExtensionHandler {
         task.resume()
         
         NSLog("Done sending")
-        
-        SFSafariApplication.getActiveWindow { (window) in
-            let path2 :String = Bundle.main.path(forResource: "icon-ok", ofType: "png")!
-            let okayImage = NSImage(byReferencingFile :path2)!
-            NSLog(okayImage.description)
-            
-            
-            var toolbaritemretrieved = false
-            var toolbaritem : SFSafariToolbarItem?
-            window?.getToolbarItem { (item) in
-                // Typecast.
-                toolbaritem = item as SFSafariToolbarItem?;
-                toolbaritemretrieved = true;
-            }
-            
-            while(!toolbaritemretrieved){
-                //wait for toolbar item to be retrieved
-            }
-            toolbaritem!.setImage(okayImage);
-            
-            NSLog("Toolbar: " + toolbaritem!.description);
-            
-            SFSafariApplication.setToolbarItemsNeedUpdate();
-        }
-        
+        /*
+         self.showOkayImage = true;
+         
+         SFSafariApplication.setToolbarItemsNeedUpdate();
+         
+         SFSafariApplication.getActiveWindow { (window) in
+         let path2 :String = Bundle.main.path(forResource: "icon-ok", ofType: "png")!
+         let okayImage = NSImage(byReferencingFile :path2)!
+         NSLog("Image:" + okayImage.description)
+         
+         NSLog("window:" + window!.description)
+         var toolbaritemretrieved = false
+         var toolbaritem : SFSafariToolbarItem?
+         window!.getToolbarItem { (item) in
+         // Typecast.
+         toolbaritem = item as SFSafariToolbarItem?;
+         toolbaritemretrieved = true;
+         NSLog("IteM: " + item!.description)
+         NSLog("window: " + window!.description)
+         }
+         
+         while(!toolbaritemretrieved){
+         //wait for toolbar item to be retrieved
+         }
+         toolbaritem!.setImage(okayImage);
+         
+         NSLog("Toolbar: " + toolbaritem!.description);
+         
+         SFSafariApplication.setToolbarItemsNeedUpdate();
+         
+         }
+         */
         
     }
     
@@ -108,26 +117,53 @@ class SafariExtensionHandler: SFSafariExtensionHandler {
     override func toolbarItemClicked(in window: SFSafariWindow) {
         // This method will be called when your toolbar item is clicked.
         NSLog("The extension's toolbar item was clicked")
+        /*
+         //  https://stackoverflow.com/questions/52319160/how-can-i-change-a-toolbar-icon-in-a-safari-app-extension-at-runtime
+         var toolbaritemretrieved = false
+         var toolbaritem : SFSafariToolbarItem?
+         window.getToolbarItem { (item) in
+         toolbaritem = item as SFSafariToolbarItem?;
+         toolbaritemretrieved = true;
+         }
+         
+         while(!toolbaritemretrieved){
+         //wait for toolbar item to be retrieved
+         }
+         // toolbaritem?.setImage(okayImage);
+         SFSafariApplication.setToolbarItemsNeedUpdate();
+         */
         
-        //  https://stackoverflow.com/questions/52319160/how-can-i-change-a-toolbar-icon-in-a-safari-app-extension-at-runtime
-        var toolbaritemretrieved = false
-        var toolbaritem : SFSafariToolbarItem?
-        window.getToolbarItem { (item) in
-            toolbaritem = item as SFSafariToolbarItem?;
-            toolbaritemretrieved = true;
-        }
-        
-        while(!toolbaritemretrieved){
-            //wait for toolbar item to be retrieved
-        }
-       // toolbaritem?.setImage(okayImage);
-        SFSafariApplication.setToolbarItemsNeedUpdate();
     }
     
     
     override func validateToolbarItem(in window: SFSafariWindow, validationHandler: @escaping ((Bool, String) -> Void)) {
         // This is called when Safari's state changed in some way that would require the extension's toolbar item to be validated again.
         validationHandler(true, "")
+        
+        /*
+         NSLog("validateToolbarItem " + self.showOkayImage.description)
+         
+         if(self.showOkayImage){
+         let path2 :String = Bundle.main.path(forResource: "icon-ok", ofType: "png")!
+         let okayImage = NSImage(byReferencingFile :path2)!
+         NSLog("Image:" + okayImage.description)
+         
+         var toolbaritemretrieved = false
+         var toolbaritem : SFSafariToolbarItem?
+         window.getToolbarItem { (item) in
+         toolbaritem = item as SFSafariToolbarItem?;
+         toolbaritemretrieved = true;
+         }
+         
+         while(!toolbaritemretrieved){
+         //wait for toolbar item to be retrieved
+         }
+         
+         toolbaritem?.setImage(okayImage);
+         }
+         */
+        
+        
     }
     
     /*

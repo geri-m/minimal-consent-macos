@@ -19,10 +19,13 @@ class ViewController: NSViewController {
     }
     
     @IBAction func openSafariExtensionPreferences(_ sender: AnyObject?) {
-        SFSafariApplication.showPreferencesForExtension(withIdentifier: "at.madlmayr.minimal-consent-Extension") { error in
-            if let xxx = error {
+        
+        
+        
+        SFSafariApplication.showPreferencesForExtension(withIdentifier: "at.madlmayr.minimal-consent-Extension.ext") { error in
+            if let e = error {
                 // Insert code to inform the user that something went wrong.
-                print(xxx)
+                NSLog(e.localizedDescription)
             }
         }
     }
