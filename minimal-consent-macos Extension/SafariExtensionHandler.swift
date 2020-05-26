@@ -9,8 +9,8 @@
 import SafariServices
 
 class SafariExtensionHandler: SFSafariExtensionHandler {
-       
-    // static var showOkayImage: Bool = false;
+    
+    static var showOkayImage: Bool = false;
     
     // creating a mutable Dictionary to send over to the backend.
     func unimmutable(dict:[String:Any])->[String:Any] {
@@ -70,12 +70,7 @@ class SafariExtensionHandler: SFSafariExtensionHandler {
         task.resume()
         
         NSLog("Done sending")
-        
-        // setting the variable to change the icon.
-        /*
-        SafariExtensionHandler.showOkayImage = true;
-        SFSafariApplication.setToolbarItemsNeedUpdate();
-         */
+        self.switchImage(isOkayImage: true);
     }
     
     
@@ -89,29 +84,33 @@ class SafariExtensionHandler: SFSafariExtensionHandler {
         // This is called when Safari's state changed in some way that would require the extension's toolbar item to be validated again.
         validationHandler(true, "")
         
-        /*
-        NSLog("validateToolbarItem " + SafariExtensionHandler.showOkayImage.description)
+        window.getToolbarItem { (item) in
+            let toolbaritem = item as SFSafariToolbarItem?;
         
-        if(SafariExtensionHandler.showOkayImage){
-            let path2 :String = Bundle.main.path(forResource: "icon-ok", ofType: "png")!
-            let okayImage = NSImage(byReferencingFile :path2)!
-            NSLog("Image:" + okayImage.description)
-            
-            var toolbaritemretrieved = false
-            var toolbaritem : SFSafariToolbarItem?
-            window.getToolbarItem { (item) in
-                toolbaritem = item as SFSafariToolbarItem?;
-                toolbaritemretrieved = true;
+            if(SafariExtensionHandler.showOkayImage){
+                let path :String = Bundle.main.path(forResource: "icon-ok", ofType: "png")!
+                let okayImage = NSImage(byReferencingFile :path)!
+                toolbaritem?.setImage(okayImage);
+                // After showing the OK Image, we want to switch back after some time:
+                DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                    self.switchImage(isOkayImage: false)
+                }
+            } else {
+                let path :String = Bundle.main.path(forResource: "icon", ofType: "png")!
+                let standardImage = NSImage(byReferencingFile :path)!
+                toolbaritem?.setImage(standardImage);
             }
-            
-            while(!toolbaritemretrieved){
-                //wait for toolbar item to be retrieved
-            }
-            
-            toolbaritem?.setImage(okayImage);
         }
-            */
     }
+    
+    // Setting the Standard Image.
+    func switchImage(isOkayImage image: Bool){
+        // setting the variable to change the icon.
+        SafariExtensionHandler.showOkayImage = image;
+        SFSafariApplication.setToolbarItemsNeedUpdate();
+    }
+    
+    
     
     /*
      override func popoverViewController() -> SFSafariExtensionViewController {
