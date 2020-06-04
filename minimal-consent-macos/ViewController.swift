@@ -11,7 +11,7 @@ import SafariServices.SFSafariApplication
 
 class ViewController: NSViewController {
 
-    //@IBOutlet var appNameLabel: NSTextField!
+    @IBOutlet var appNameLabel: NSTextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
