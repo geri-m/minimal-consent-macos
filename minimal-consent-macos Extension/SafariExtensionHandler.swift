@@ -38,7 +38,7 @@ class SafariExtensionHandler: SFSafariExtensionHandler {
         // Optional Chaining, in order not to fail, if one of the parameters is nil.
         // https://docs.swift.org/swift-book/LanguageGuide/OptionalChaining.html
         newDict["url"] = prop?.url?.absoluteString
-        newDict["version"] = "1.0.8"
+        newDict["version"] = "1.0.9"
         newDict["uuid"]  = "some-uuid-from-OSX"
         
         NSLog("User Info: (\(userInfo ?? [:]))")
